@@ -54,5 +54,5 @@ if df is not None:
  
     fig2 = m.plot_components(forecast)
     st.write(fig2)
-    st.write('Trend is like similarity which is observed from given data and plot depends on datestamp.) 
+    st.write('Trend is like similarity which is observed from given data and plot depends on datestamp.') 
     st.write('Note:These are projected values actual prices may vary.')
