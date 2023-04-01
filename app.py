@@ -5,12 +5,8 @@ from prophet import Prophet
 from prophet.diagnostics import performance_metrics
 from prophet.diagnostics import cross_validation
 from prophet.plot import plot_cross_validation_metric
-import base64
 
-st.title('Forecasting')
-
-st.write('Import the time series csv file here. Columns must be labeled ds and y. The input to Prophet is always a dataframe with two columns: ds and y. ', type='csv')
-st.write('CSV file can be updated and reuploaded any number of times inorder to get prediction and forecasting depends on only two factors date(ds) and target column(y)')
+st.title('Price Forecast Exclusively for Customers')
 
 l = ['Rice','sugar','oil']
 use_defo = st.selectbox('Select Dataset',l)
@@ -45,7 +41,7 @@ if df is not None:
 """
 ### Step 3: Visualize Forecast Data
 
-The below visual shows future predicted values. "yhat" is the predicted value.
+The below visual shows future predicted values. "yhat" is the estimated value.Customers can view prices maximum of 31 days.
 """
 if df is not None:
     future = m.make_future_dataframe(periods=periods_input)
@@ -58,4 +54,5 @@ if df is not None:
  
     fig2 = m.plot_components(forecast)
     st.write(fig2)
-    st.write('Trend is like similarity which is observed from given data and plot depends on datestamp') 
+    st.write('Trend is like similarity which is observed from given data and plot depends on datestamp.) 
+    st.write('Note:These are projected values actual prices may vary.')
