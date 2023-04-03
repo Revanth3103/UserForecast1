@@ -9,7 +9,7 @@ from prophet.plot import plot_cross_validation_metric
 st.title('Price Forecast Exclusively for Customers')
 
 l = ['Rice','sugar','oil']
-use_defo = st.selectbox('Select Item',l)
+use_defo = st.multiselect('Select Item',l)
 if use_defo == "":
     st.write("Choose one")
 if use_defo == 'Rice':
