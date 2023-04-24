@@ -8,7 +8,7 @@ from prophet.plot import plot_cross_validation_metric
 
 st.title('Price Forecast Exclusively for Customers')
 
-l = ['Rice','sugar','oil']
+l = ['Rice','sugar','oil','Pista']
 use_defo = st.selectbox('Select Item',l)
 if use_defo == "":
     st.write("Choose one")
@@ -16,9 +16,10 @@ if use_defo == 'Rice':
     df = 'Riceprice.csv'
 elif use_defo == 'sugar':
     df = 'sugar.csv'
-else :
-    df = 'oil.csv'
-
+elif use_defo == "Pista :
+    df = 'Pista.csv'
+else: 
+    df ='oil.csv'
 
 if df is not None:
     data = pd.read_csv(df)
